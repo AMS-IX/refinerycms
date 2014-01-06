@@ -599,7 +599,7 @@ WYMeditor.editor.prototype.update = function() {
   html = html.replace(/src=\"system\/images/g, 'src="/system/images');
 
   // get rid of wym id tags that were forgotten about by replacing them with their content.
-  $(html).find(bad_spans='span[id|=wym], span[id=undefined]').add($(html).filter(bad_spans)).each(function(i, span) {
+  /*$(html).find(bad_spans='span[id|=wym], span[id=undefined]').add($(html).filter(bad_spans)).each(function(i, span) {
     html_to_replace_with = wym.parser.parse($(span).html());
     html_to_replace = wym.parser.parse($(span).wrap('<div />').parent().html());
     if($.browser.msie) {
@@ -607,7 +607,7 @@ WYMeditor.editor.prototype.update = function() {
       html_to_replace = new RegExp(html_to_replace.replace(/(\ [^\=]+\=)([^\ >]+)/, '$1"$2"'), "ig");
     }
     html = html.replace(html_to_replace, html_to_replace_with);
-  });
+  });*/
 
   // get rid of id='last_paste' tags that were forgotten about.
   html = html.replace(/(\ ?id=(\"|\')last\_paste(\"|\'))/igm, '');
